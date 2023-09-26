@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <input type="button" value="get location" onclick="getlocation()">
+    <script>
+        function getlocation(){
+            if(navigator.geolocation){
+                var options={timeout:1000}
+                navigator.geolocation.getCurrentPosition(showPosition,errorhandle,options);//at least 1 callback funciton is required DOMNT INCLUDE () in callback function
+            }else{
+                alert("browser not support");
+            }
+        }
+        function showPosition(positionws){//positionws is object name can be any name
+            var lat = positionws.coords.latitude;
+            var lon = positionws.coords.longitude;
+            alert("lat: "+lat+" lon: "+lon);
+        }
+
+        function errorhandle(position)
+        {
+            if(position.code==1){
+                alert("user denied");}
+            else if(position.code==3){
+                alert("timeout");
+            }
+        }
+    </script>
+</body>
+</html>
