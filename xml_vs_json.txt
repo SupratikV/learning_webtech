@@ -1,0 +1,16 @@
+XML: 
+pros:very readable,can be converted to many forms,very organised,helps in storing large hirearchial data
+cons: file size is large(3*csv) because of open n close tags
+
+JSON:
+pros:file size smaller than xml,can be natively parsed into javascript,it is also hirearchial
+cons:cannot be easily parsed into other objects, due to lack of support
+
+differences:
+JSON                           XML
+no support namespaces      supports namespaces
+supports arrays            doesnt support arrays
+more readable
+doesnt support comments    supports comments
+only supports utf 8        supports all encoding
+encoding
